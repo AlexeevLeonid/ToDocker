@@ -4,7 +4,7 @@ BACKEND_IMAGE=todoapi
 
 .PHONY: all registry build push deploy
 
-init:
+deploy:
 	docker	run	-d	-p	5000:5000	--name	registry	registry:2
 	docker	build	-t	$(BACKEND_IMAGE):latest	-f	ToDocker/Dockerfile .
 	docker	build	-t	$(FRONTEND_IMAGE):latest	-f	clientapp/Dockerfile	./clientapp
