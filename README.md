@@ -5,6 +5,9 @@
 
 ### Пошагово
 
+В Makefile первым делом задаются названия образов `REGISTRY=localhost:5000``FRONTEND_IMAGE=reactapp``BACKEND_IMAGE=todoapi`, затем запускается процедура `deploy`
+
+
 Запуск локального регистра на порте 5000
 
 `docker	run	-d	-p	5000:5000	--name	registry	registry:2`
@@ -24,6 +27,8 @@
 Деплой
 
 `docker-compose up -d`
+
+Процедуры `back` и `front` фиксируют изменения в коде, создают новые изображения, отправляют их в реестр, и пересобирают приложение.
 
 Образы лежат в файлах контейнера registry, по пути `var/cache/registry/v2/repositories` (вообще, репозиторий может быить и удалённым)
 
