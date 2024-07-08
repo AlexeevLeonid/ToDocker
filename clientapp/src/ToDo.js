@@ -28,7 +28,6 @@ function ToDo() {
     };
 
     const deleteTodo = async (id) => {
-        console.log(id)
         await api.delete('/api/TodoItems/' + id);
         setTodos(todos.filter(todo => todo.id !== id));
     };
@@ -36,6 +35,7 @@ function ToDo() {
     return (
         <div>
             <h1>To-Do List</h1>
+            <br></br>
             <input
                 type="text"
                 value={newTodo}
